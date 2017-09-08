@@ -20,5 +20,8 @@ script:
   - sh -c "if [ '$RUN_TESTS' = '1' ]; then vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover; fi"
   - sh -c "if [ '$PHPCS' = '1' ]; then vendor/bin/phpcs -p -n --extensions=php --standard=psr2 ./src ./tests; fi"
 
+after_script:
+  - php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
+
 notifications:
   email: false
