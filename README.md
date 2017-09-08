@@ -41,6 +41,9 @@ Make sure to have a `Encryption.key` config value in your `config/app.php` file:
 
 ## Usage
 
+**Note:** This database type expects columns to be nullable in the case of an
+omitted column or whenever explicitly setting a `null` value for a column.
+
 Use `BLOB` types for columns that are to be encrypted, for example:
 
 ``` sql
