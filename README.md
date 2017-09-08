@@ -76,6 +76,7 @@ class UsersTable extends Table
         $schema->columnType('first_name', 'encrypted');
         $schema->columnType('last_name', 'encrypted');
         $schema->columnType('email', 'encrypted');
+
         return $schema;
     }
 }
