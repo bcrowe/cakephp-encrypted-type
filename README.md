@@ -34,7 +34,7 @@ Make sure to have a `Encryption.key` config value in your `config/app.php` file:
 ``` php
 [
     'Encryption' => [
-        'key' => 'yourencryptionkeygoesrighthereyaythisisfun',
+        'key' => env('ENCRYPTION_KEY', 'defaultencryptionkeygoesrighthereyaythisisfun'),
     ],
 ]
 ```
