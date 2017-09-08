@@ -35,7 +35,7 @@ class EncryptedType extends Type implements OptionalConvertInterface, TypeInterf
     }
 
     /**
-     * Convert serialized values to PHP data types.
+     * Convert encrypted values to PHP strings or null.
      *
      * @param mixed $value The value to convert.
      * @param \Cake\Database\Driver $driver The driver instance to convert with.
