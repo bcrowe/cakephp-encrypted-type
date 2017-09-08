@@ -1,0 +1,46 @@
+{
+    "name": "bcrowe/cakephp-encrypted-type",
+    "description": "CakePHP 3 plugin that provides and encrypted database type.",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp", "database", "type", "cakephp3", "encrypted", "encryption"
+    ],
+    "homepage": "https://github.com/bcrowe/cakephp-encrypted-type",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bryan Crowe",
+            "email": "bryan@bryan-crowe.com",
+            "homepage": "http://bryan-crowe.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BryanCrowe\\EncryptedType\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BryanCrowe\\EncryptedType\\": "src",
+            "BryanCrowe\\EncryptedType\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
