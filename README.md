@@ -41,7 +41,22 @@ Make sure to have a `Encryption.key` config value in your `config/app.php` file:
 
 ## Usage
 
-Map the type to a column in your Table class:
+Use `BLOB` types for columns that are to be encrypted, for example:
+
+``` sql
+CREATE TABLE `users` (
+  `id` char(36) NOT NULL DEFAULT '',
+  `first_name` blob,
+  `last_name` blob,
+  `email` blob,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+[Map the type](https://book.cakephp.org/3.0/en/orm/database-basics.html#data-types)
+to a column in your Table class:
 
 ``` php
 <?php
