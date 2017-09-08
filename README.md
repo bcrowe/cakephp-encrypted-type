@@ -7,7 +7,11 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is plugin provides a encrypted database type for CakePHP 3.
+This plugin provides a CakePHP 3 encrypted database type for application-level
+encryption. Before using this plugin you may want to weigh your options
+between [full-disk, database-level, and application-level encryption](https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/).
+This plugin was born out of Amazon Aurora not supporting encryption with cross
+region replication before [March 28, 2017](https://aws.amazon.com/blogs/aws/amazon-aurora-update-more-cross-region-cross-account-support-t2-small-db-instances-another-region/).
 
 ## Install
 
@@ -23,6 +27,16 @@ mapping:
 ``` php
 Plugin::load('BryanCrowe/EncryptedType');
 Type::map('encrypted', 'BryanCrowe\EncryptedType\Database\Type\EncryptedType');
+```
+
+Make sure to have a `Encryption.key` config value in your `config/app.php` file:
+
+``` php
+[
+    'Encryption' => [
+        'key' => 'yourencryptionkeygoesrighthereyaythisisfun',
+    ],
+]
 ```
 
 ## Usage
