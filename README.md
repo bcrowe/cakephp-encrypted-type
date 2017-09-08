@@ -17,13 +17,35 @@ Via Composer
 $ composer require bcrowe/cakephp-encrypted-type
 ```
 
-Load the plugin in your application's `bootstrap.php` file:
+Load the plugin in your application's `bootstrap.php` file, then define the type
+mapping:
 
 ``` php
 Plugin::load('BryanCrowe/EncryptedType');
+Type::map('encrypted', 'BryanCrowe\EncryptedType\Database\Type\EncryptedType');
 ```
 
 ## Usage
+
+Map the type to a column in your Table class:
+
+``` php
+<?php
+namespace App\Model\Table;
+
+use Cake\Database\Schema\TableSchema;
+use Cake\ORM\Table;
+
+class UsersTable extends Table
+{
+
+    protected function _initializeSchema(TableSchema $schema)
+    {
+        $schema->columnType('name', 'encrypted');
+        return $schema;
+    }
+}
+```
 
 ## Changelog
 
