@@ -86,4 +86,14 @@ class EncryptedTypeTest extends TestCase
     {
         $this->assertEquals(PDO::PARAM_STR, $this->type->toStatement('', $this->driver));
     }
+
+    /**
+     * Test toPHP
+     *
+     * @return void
+     */
+    public function testRequiresToPhpCast()
+    {
+        $this->assertTrue($this->type->requiresToPhpCast());
+    }
 }
