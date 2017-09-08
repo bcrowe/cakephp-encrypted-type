@@ -73,7 +73,9 @@ class UsersTable extends Table
 
     protected function _initializeSchema(TableSchema $schema)
     {
-        $schema->columnType('name', 'encrypted');
+        $schema->columnType('first_name', 'encrypted');
+        $schema->columnType('last_name', 'encrypted');
+        $schema->columnType('email', 'encrypted');
         return $schema;
     }
 }
