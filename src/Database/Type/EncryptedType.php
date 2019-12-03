@@ -1,10 +1,11 @@
 <?php
+declare(strict_types=1);
+
 namespace BryanCrowe\EncryptedType\Database\Type;
 
 use Cake\Core\Configure;
 use Cake\Database\DriverInterface;
 use Cake\Database\Type\BaseType;
-use Cake\Database\TypeInterface;
 use Cake\Database\Type\OptionalConvertInterface;
 use Cake\Utility\Security;
 use InvalidArgumentException;
