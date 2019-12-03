@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This plugin provides a CakePHP 3 encrypted database type for application-level
+This plugin provides a CakePHP 4 encrypted database type for application-level
 encryption. Before using this plugin you may want to weigh your options
 between [full-disk, database-level, and application-level encryption](https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/).
 This plugin was born out of Amazon Aurora not supporting encryption with cross

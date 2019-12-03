@@ -2,8 +2,8 @@
 namespace BryanCrowe\EncryptedType\Database\Type;
 
 use Cake\Core\Configure;
-use Cake\Database\Driver;
-use Cake\Database\Type;
+use Cake\Database\DriverInterface;
+use Cake\Database\Type\BaseType;
 use Cake\Database\TypeInterface;
 use Cake\Database\Type\OptionalConvertInterface;
 use Cake\Utility\Security;
@@ -13,7 +13,7 @@ use PDO;
 /**
  * Encrypted BLOB converter. Used to encrypt and decrypt stored data.
  */
-class EncryptedType extends Type implements OptionalConvertInterface, TypeInterface
+class EncryptedType extends BaseType implements OptionalConvertInterface
 {
 
     /**
@@ -38,10 +38,10 @@ class EncryptedType extends Type implements OptionalConvertInterface, TypeInterf
      * Convert encrypted values to PHP strings or null.
      *
      * @param mixed $value The value to convert.
-     * @param \Cake\Database\Driver $driver The driver instance to convert with.
-     * @return mixed
+     * @param \Cake\Database\DriverInterface $driver The driver instance to convert with.
+     * @return string|null
      */
-    public function toPHP($value, Driver $driver)
+    public function toPHP($value, DriverInterface $driver)
     {
         if ($value === null) {
             return null;
@@ -73,10 +73,10 @@ class EncryptedType extends Type implements OptionalConvertInterface, TypeInterf
      * Convert PHP values into the database format.
      *
      * @param mixed $value The value to convert.
-     * @param \Cake\Database\Driver $driver The driver instance to convert with.
-     * @return string
+     * @param \Cake\Database\DriverInterface $driver The driver instance to convert with.
+     * @return string|null
      */
-    public function toDatabase($value, Driver $driver)
+    public function toDatabase($value, DriverInterface $driver): ?string
     {
         if ($value === null) {
             return null;
@@ -101,10 +101,10 @@ class EncryptedType extends Type implements OptionalConvertInterface, TypeInterf
      * Get the correct PDO binding type for string data.
      *
      * @param mixed $value The value being bound.
-     * @param \Cake\Database\Driver $driver The driver.
+     * @param \Cake\Database\DriverInterface $driver The driver.
      * @return int
      */
-    public function toStatement($value, Driver $driver)
+    public function toStatement($value, DriverInterface $driver)
     {
         if ($value === null) {
             return PDO::PARAM_NULL;
@@ -118,7 +118,7 @@ class EncryptedType extends Type implements OptionalConvertInterface, TypeInterf
      *
      * @return boolean True as database results are returned as encrypted strings.
      */
-    public function requiresToPhpCast()
+    public function requiresToPhpCast(): bool
     {
         return true;
     }
