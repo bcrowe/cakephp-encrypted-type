@@ -15,7 +15,7 @@ class EncryptedTypeTest extends TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->type = Type::build('encrypted');
@@ -56,11 +56,11 @@ class EncryptedTypeTest extends TestCase
     /**
      * Tests that passing an invalid value will throw an exception
      *
-     * @expectedException \InvalidArgumentException
      * @return void
      */
     public function testToDatabaseInvalidArray()
     {
+        $this->expectException('InvalidArgumentException');
         $this->type->toDatabase([1, 2, 3], $this->driver);
     }
 
@@ -85,6 +85,7 @@ class EncryptedTypeTest extends TestCase
     public function testToStatement()
     {
         $this->assertEquals(PDO::PARAM_STR, $this->type->toStatement('', $this->driver));
+        $this->assertEquals(PDO::PARAM_NULL, $this->type->toStatement(null, $this->driver));
     }
 
     /**

@@ -16,10 +16,11 @@
         }
     ],
     "require": {
-        "cakephp/cakephp": "^3.4.0"
+        "php": ">=7.2",
+        "cakephp/cakephp": "4.x-dev as 4.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.0",
+        "phpunit/phpunit": "^8.0",
         "scrutinizer/ocular": "~1.1"
     },
     "autoload": {
@@ -40,8 +41,5 @@
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
-    },
-    "conflict": {
-        "phpunit/phpunit": "<5.7"
     }
 }

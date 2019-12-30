@@ -2,6 +2,9 @@
 
 All notable changes to `cakephp-encrypted-type` will be documented in this file.
 
+## 2.0.0 - TBA
+- Supports CakePHP 4.x
+
 ## 1.0.0 - 2017-09-09
 
 - First stable release.
