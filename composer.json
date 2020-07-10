@@ -3,7 +3,7 @@
     "description": "CakePHP 3 plugin that provides application-level database encryption.",
     "type": "cakephp-plugin",
     "keywords": [
-        "cakephp", "database", "type", "cakephp3", "encrypted", "encryption", "encrypt"
+        "cakephp", "database", "type", "cakephp3", "encrypted", "encryption", "encrypt", "cakephp4"
     ],
     "homepage": "https://github.com/bcrowe/cakephp-encrypted-type",
     "license": "MIT",
